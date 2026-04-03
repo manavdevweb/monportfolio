@@ -2,129 +2,121 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen relative">
-      {/*Premier div qui englobe tout le code  */}
-      <div className="flex items-center w-full h-full bg-cover bg-center text-center" style={{backgroundImage: "url(/main-bg.webp)" }}>
-      <div className="pl-20 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-[10] max-w-[750px]">
+    <main className="w-screen h-screen relative overflow-hidden">
 
-      {/*Texte d'introduction a la page  */}
+      {/* Section principale avec background */}
+      <div
+        className="flex items-center w-full h-full bg-cover bg-center text-center"
+        style={{ backgroundImage: "url(/main-bg.webp)" }}
+      >
+        <div className="pl-6 md:pl-40 pb-40 md:pb-20 flex flex-col gap-5 z-10 max-w-[750px]">
+          {/* Titre principal */}
+          <h1 className="text-[32px] md:text-[50px] text-white font-semibold">
+            Tout est possible à travers le
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
+              {" "}Développement Web
+            </span>
+          </h1>
 
-        <h1 className="text-[50px] text-white font-semibold">
-        Tout est possible a travers le
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500">
-        {" "}
-         Développement Web
-        </span>
-        </h1>
-        <p className="text-gray-200 hidden md:block">
-            Bonjour, je suis PEERTHY Manav, un passioné de programmation basé en ILE DE FRANCE. 
-            Débutant dans le domaine j'aide les entreprises et les particuliers à atteindre leurs objectifs grâce à des solutions créatives, efficaces et personnalisées.
-            Mon objectif est de créer des expériences inoubliables et de résultats tangibles. 
-            Tu peux découvrir mes projets ci-dessous et me contacter si tu as une idée ou un projet en tête ! 
+          {/* Texte intro */}
+          <p className="text-gray-200 hidden md:block text-left">
+            Bonjour, je suis PEERTHY Manav, un passionné de programmation basé en Île-de-France.
+            Débutant dans le domaine, j'aide les entreprises et particuliers à atteindre leurs objectifs
+            grâce à des solutions créatives, efficaces et personnalisées.
+            Mon objectif est de créer des expériences inoubliables et des résultats tangibles.
+            Tu peux découvrir mes projets ci-dessous et me contacter si tu as une idée ou un projet en tête !
           </p>
 
-      {/*Fin du texte d'introduction a la page  */}
-      <div className="flex-col md:flex-row hidden md:flex gap-20 ">
-      {/* Lien LEARN MORE sur la page  */}
-      <Link href="/my-skills" className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]">
-          En savoir +
-      </Link>
-      {/* FIN du lien LEARN MORE  */}
+          {/* Liens desktop */}
+          <div className="flex-col md:flex-row hidden md:flex gap-6 mt-4">
+            <Link
+              href="/my-skills"
+              className="rounded-[20px] bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px] text-center"
+            >
+              En savoir +
+            </Link>
 
-      {/* Lien MY PROJECTS sur la page  */}
-      <Link href="/my-projects" className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]">
-      <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hver:opacity-20" />
-         Mes Projets
-      </Link>
-      {/* FIN du lien MY PROJECTS  */}
+            <Link
+              href="/my-projects"
+              className="rounded-[20px] border border-white hover:bg-white hover:text-blue-600 px-5 py-3 text-lg text-white max-w-[200px] text-center"
+            >
+              Mes Projets
+            </Link>
 
-      {/* Lien Contact me sur la page  */}
-      <Link href="/contact-me" className="rounded-[20px] group relative bg-blue-500 hover:bg-blue-400 px-5 py-3 text-lg text-white max-w-[200px]">
-      <div className="absolute rounded-[20px] z-[1] bg-white inset-0 opacity-0 group-hver:opacity-20" />
-         Me contacter
-      </Link>
-      {/* FIN du lien Contact me  */}
-
-
+            <Link
+              href="/contact-me"
+              className="rounded-[20px] border border-white hover:bg-white hover:text-blue-600 px-5 py-3 text-lg text-white max-w-[200px] text-center"
+            >
+              Me contacter
+            </Link>
+          </div>
+        </div>
       </div>
 
-      </div>
-
-      </div>
-      {/* Fin du premier div qui englobe tout le code  */}
-
-
-      <div className="absolute flex bottom-10 z-[20] right-5 flex-col md:hidden gap-5">
+      {/* Liens mobiles en bas à droite */}
+      <div className="absolute flex bottom-10 right-5 z-20 flex-col md:hidden gap-4">
         <Link
           href="/my-skills"
-          className="rounded-[20px] group bg-blue-500 px-5 py-3 text-lg text-white max-w-[200px]"
+          className="rounded-[20px] bg-blue-500 px-5 py-3 text-lg text-white text-center"
         >
-          Learn more
+          En savoir +
         </Link>
-
         <Link
           href="/my-projects"
-          className="rounded-[20px] group bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
+          className="rounded-[20px] border border-white px-5 py-3 text-lg text-white text-center"
         >
-          My projects
+          Mes Projets
         </Link>
         <Link
           href="/contact-me"
-          className="rounded-[20px] group bg-trasparent border border-white px-5 py-3 text-lg text-white max-w-[200px]"
+          className="rounded-[20px] border border-white px-5 py-3 text-lg text-white text-center"
         >
-          Contact me
+          Me contacter
         </Link>
       </div>
 
-{/* Conteneur principal positionné en bas à droite de son parent */}
-<div className="absolute bottom-0 right-0 z-[10]">
+      {/* Décorations visuelles */}
+      <div className="absolute bottom-0 right-0 z-10">
+        {/* Image du cheval */}
+        <Image
+          src="/horse.png"
+          alt="horse"
+          width={300}
+          height={300}
+          className="absolute right-[55px] top-40"
+        />
 
-  {/* Image du cheval, positionnée de manière absolue */}
-  <Image
-    src="/horse.png"               // Chemin vers l’image du cheval
-    alt="horse"                    // Texte alternatif (important pour l’accessibilité)
-    height={300}                   // Hauteur de l’image
-    width={300}                    // Largeur de l’image
-    className="absolute right-55 top-40" // Positionnement personnalisé du cheval dans le conteneur
-  />
+        {/* Image de la falaise */}
+        <Image
+          src="/cliff.webp"
+          alt="cliff"
+          width={480}
+          height={480}
+        />
+      </div>
 
-  {/* Image de la falaise, en dessous du cheval dans l’ordre du DOM */}
-  <Image
-    src="/cliff.webp"              // Chemin vers l’image de la falaise
-    alt="cliff"                    // Texte alternatif pour la falaise
-    width={480}                    // Largeur de l’image
-    height={480}                   // Hauteur de l’image
-  />
-
-</div>
-
-'use client';
-
-
-
-<div className="absolute bottom-0 z-[5] w-full h-auto">
+      {/* Arrière-plan arbres */}
+      <div className="absolute bottom-0 z-5 w-full">
         <Image
           src="/trees.webp"
           alt="trees"
           width={2000}
           height={2000}
-          className="w-full h-full"
+          className="w-full h-auto"
         />
       </div>
 
+      {/* Étoiles */}
       <Image
         src="/stars.png"
         alt="stars"
         height={300}
         width={300}
-        className="absolute top-0 left-0 z-[10]"
+        className="absolute top-0 left-0 z-10"
       />
-
-
     </main>
   );
 }
